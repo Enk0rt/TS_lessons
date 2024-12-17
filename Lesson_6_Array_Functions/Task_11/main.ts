@@ -1,6 +1,13 @@
 // ----------------------- TASK - #4LJn7zBx --------------------------------
 
-let coursesArray:{title:string,monthDuration:number,hourDuration:number,modules:string[]}[] = [
+interface ICourses {
+    title:string,
+    monthDuration:number,
+    hourDuration:number,
+    modules:string[]
+}
+
+let coursesArray:ICourses[] = [
     {
         title: 'JavaScript Complex',
         monthDuration: 5,
@@ -70,8 +77,8 @@ let coursesArray:{title:string,monthDuration:number,hourDuration:number,modules:
     }
 ];
 
-let courseWithSass:{title:string,monthDuration:number,hourDuration:number,modules:string[]}[] = coursesArray.filter(item => item.modules.includes('sass'));
+let courseWithSass:ICourses[] = coursesArray.filter(item => item.modules.includes('sass'));
 console.log(courseWithSass);
 
-let coursesWithDocker:{title:string,monthDuration:number,hourDuration:number,modules:string[]}[] = coursesArray.filter(item => item.modules.includes('docker'));
+let coursesWithDocker:ICourses[] = coursesArray.filter(item => item.modules.includes('docker'));
 console.log(coursesWithDocker);

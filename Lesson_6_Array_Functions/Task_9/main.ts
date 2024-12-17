@@ -3,10 +3,16 @@
 let cardSuites:string[] = ['spade', 'diamond','heart', 'clubs']
 let values:string[] = ['6','7','8','9','10', 'ace','jack','queen','king']
 
-let cards:{cardSuit:string,value:string,color?:string}[] = [];
+interface ICards {
+    cardSuit:string,
+    value:string,
+    color?:string
+}
+
+let cards:ICards[] = [];
 for (const cardSuit of cardSuites) {
     for (const value of values) {
-        let card:{cardSuit:string,value:string,color?:string} = {
+        let card:ICards = {
             cardSuit:cardSuit,
             value: value
         }

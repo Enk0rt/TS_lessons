@@ -1,6 +1,12 @@
 // ------------------- TASK - #bovDJDTIjt ----------------------------
 
-let infoObjects:{id:number,name:string,age:number}[] = [
+interface IInfoObj {
+    id:number,
+    name:string,
+    age:number
+}
+
+let infoObjects:IInfoObj[] = [
     {
         id:1,
         name:'Axe',
@@ -18,7 +24,7 @@ let infoObjects:{id:number,name:string,age:number}[] = [
     }
 ]
 
-let userInfo = (info:{id:number,name:string,age:number}[]):void => {
+let userInfo = (info:IInfoObj[]):void => {
     document.write(`<div>`)
     for (const infoElement of info) {
         document.write(`<p>`)

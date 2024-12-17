@@ -1,6 +1,11 @@
 // ----------------------- TASK - #yo06d74c1C --------------------------------
 
-let coursesAndDurationArray1:{title:string,monthDuration:number}[] = [
+interface ICourses1{
+    title:string,
+    monthDuration:number
+}
+
+let coursesAndDurationArray1:ICourses1[] = [
     {title: 'JavaScript Complex', monthDuration: 5},
     {title: 'Java Complex', monthDuration: 6},
     {title: 'Python Complex', monthDuration: 6},
@@ -26,7 +31,7 @@ let coursesAndDurationArray1:{title:string,monthDuration:number}[] = [
 // });
 // console.log(mappedArr);
 
-let reslt:{title:string,monthDuration:number}[] = coursesAndDurationArray1
+let reslt:ICourses1[] = coursesAndDurationArray1
     .sort((a,b) => b.monthDuration - a.monthDuration)
     .filter(item => item.monthDuration > 5)
     .map((item,idx) => ({...item, id: idx + 1}));

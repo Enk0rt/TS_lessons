@@ -1,6 +1,12 @@
 // ------------------- TASK - #bovDJDTIjt ----------------------------
 
-let infoArr:{id:number,name:string,age:number}[] = [
+interface IInfo {
+    id:number,
+    name:string,
+    age:number
+}
+
+let infoArr:IInfo[] = [
     {
         id:1,
         name:'Axe',
@@ -18,7 +24,7 @@ let infoArr:{id:number,name:string,age:number}[] = [
     }
 ]
 
-function showObj(info:{id:number,name:string,age:number}[]){
+function showObj(info:IInfo[]){
     document.write(`<div>`)
     for (const infoElement of info) {
             document.write(`<p>`)

@@ -2,7 +2,12 @@
 
 let sumUAH:number = +prompt('Enter sum');
 
-const currencyValues:{currency:string,value:number}[] = [
+interface ICurrencyValues{
+    currency:string,
+    value:number
+}
+
+const currencyValues:ICurrencyValues[] = [
     {
         currency:'USD',
         value:25
@@ -13,11 +18,11 @@ const currencyValues:{currency:string,value:number}[] = [
     }
 ]
 
-let exchangedMoney = (sumUAH:number,currencyValues:{currency:string,value:number}[],currency:string):number =>{
+let exchangedMoney = (total:number,currencyValues:ICurrencyValues[],currencyToExchange:string):number =>{
     let num:number  = 0;
     for (const item of currencyValues) {
-        if (item.currency === currency) {
-            num = sumUAH / item.value;
+        if (item.currency === currencyToExchange) {
+            num = total / item.value;
         }
     }
     return num;

@@ -1,6 +1,12 @@
 // ------------------- TASK - #SIdMd0hQ ----------------------------
 
-let usersArray:{id:number,name:string,age:number}[] = [
+interface IUser {
+    id:number,
+    name:string,
+    age:number
+}
+
+let usersArray:IUser[] = [
     {
         id: 1,
         name: 'Artem',
@@ -18,7 +24,7 @@ let usersArray:{id:number,name:string,age:number}[] = [
     },
 ]
 
-function showArray(array:object[]):void{
+function showArray(array:IUser[]):void{
     for (const user of array) {
         console.log(user);
     }

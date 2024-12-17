@@ -2,10 +2,16 @@
 let cardSuites1:string[] = ['spade', 'diamond','heart', 'clubs'];
 let values1:string[] = ['6','7','8','9','10', 'ace','jack','queen','king'];
 
-let cards1:{cardSuit:string,value:string,color?:string}[] = [];
+interface ICards {
+    cardSuit:string,
+    value:string,
+    color?:string
+}
+
+let cards1:ICards[] = [];
 for (const cardSuit of cardSuites1) {
     for (const value of values1) {
-        let card:{cardSuit:string,value:string,color?:string} = {
+        let card:ICards = {
             cardSuit:cardSuit,
             value: value
         }
@@ -17,7 +23,8 @@ for (const cardSuit of cardSuites1) {
 }
 console.log(cards1);
 
-let sortedCards = cards1.reduce((acc,curr):{spades:{cardSuit:string,value:string,color?:string}[],diamonds:{cardSuit:string,value:string,color?:string}[],hearts:{cardSuit:string,value:string,color?:string}[],clubs:{cardSuit:string,value:string,color?:string}[]} => {
+
+let sortedCards = cards1.reduce((acc,curr):{spades:ICards[],diamonds:ICards[],hearts:ICards[],clubs:ICards[]} => {
     if(curr.cardSuit === 'spade'){
         acc.spades.push(curr);
     }
